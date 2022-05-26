@@ -3,6 +3,8 @@ import Header from './components/Header'
 import List from './components/List'
 import { useState } from 'react'
 import FeedbackData from './components/data/FeedbackData'
+import FeedbackStats from './components/FeedbackStats'
+import FeedbackForm from './components/FeedbackForm'
 
 const App = () => {
 
@@ -11,8 +13,7 @@ const App = () => {
   
   
   const onDelete = (id) => {
-    console.log(id)
-
+    
     if(window.confirm('Are you sure you want to delete this feedback?')) {
       setFeedback(feedback.filter((item) => item.id !== id))
     }    
@@ -21,6 +22,8 @@ const App = () => {
   return (
     <>
      <Header />
+     <FeedbackForm />
+     <FeedbackStats feedback={feedback} />
      <List 
       feedback={feedback}
       handleDelete={onDelete} />

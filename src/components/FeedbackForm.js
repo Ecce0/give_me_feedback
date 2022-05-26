@@ -9,15 +9,14 @@ const FeedbackForm = () => {
 	const [btnDisabled, setBtnDisabled] = useState(true)
 	const [msg, setMsg] = useState('')
 	const [rating, setRating] = useState('')
-	const { addFeedback, edit } = useContext(FeedbackContext)
+	const { addFeedback, edit, updateStatement } = useContext(FeedbackContext)
 
-  useEffect(() => {
-		// if(edit.isEditing = true){
-    //   setBtnDisabled(false)
-    //   setText(edit.item.text)
-    //   setRating(edit.item.rating)
-    // }
-    console.log('test')
+   useEffect(() => {
+		if(edit.isEditing === true){
+      setBtnDisabled(false)
+      setText(edit.item.text)
+      setRating(edit.item.rating)
+    }    
 	}, [edit])
 
 	const handleTextChange = (e) => {
@@ -42,8 +41,12 @@ const FeedbackForm = () => {
 				text,
 				rating,
 			}
-
-			addFeedback(newFeedback)
+      
+      if(edit.isEditing === true) {
+        updateStatement(edit.item.id, newFeedback)
+      } else {
+        addFeedback(newFeedback)
+      }			
 			setText('')
 		}
 	}
@@ -54,7 +57,7 @@ const FeedbackForm = () => {
 		<Card>
 			<form onSubmit={handleSubmit}>
 				<h2>How would you rate my feedback app?</h2>
-				<Ratings select={(rating) => setRating(rating)} />
+				<Ratings select={setRating} selected={rating} />
 				<div className='input-group'>
 					<input
 						type='text'

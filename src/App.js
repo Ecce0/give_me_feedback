@@ -5,6 +5,7 @@ import { useState } from 'react'
 import FeedbackData from './components/data/FeedbackData'
 import FeedbackStats from './components/FeedbackStats'
 import FeedbackForm from './components/FeedbackForm'
+import { v4 as uuidv4 } from 'uuid'
 
 const App = () => {
 
@@ -19,10 +20,15 @@ const App = () => {
     }    
   }
 
+  const addFeedback = (newFeedback) => {
+    newFeedback.id = uuidv4()
+    setFeedback([newFeedback, ...feedback])
+  }
+
   return (
     <>
      <Header />
-     <FeedbackForm />
+     <FeedbackForm handleAdd={addFeedback} />
      <FeedbackStats feedback={feedback} />
      <List 
       feedback={feedback}

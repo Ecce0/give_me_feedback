@@ -33,7 +33,12 @@ export const FeedbackProvider = ({ children }) => {
 
 
   const updateStatement = (id, updItem) => {
-    setEdit(feedback.map((item) => item.id === id ? { ...item, ...updItem } : item))
+    setFeedback(feedback.map((item) => item.id === id ? { ...item, ...updItem } : item))
+
+    setEdit({
+      item: {},
+      edit: false
+    })
   }
 
   return (

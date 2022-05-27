@@ -7,7 +7,7 @@ import FeedbackContext from '../components/context/FeedbackContext'
 const SingleFeedback = ({ statement }) => {
 	const { onDelete, editStatement } = useContext(FeedbackContext)
 	return (
-		<Card reverse={true}>
+		<Card>
 			<div className='num-display'>{statement.rating}</div>
 			<button className='close' onClick={() => onDelete(statement.id)}>
 				<FaTimes color='#D81159' size={20} />

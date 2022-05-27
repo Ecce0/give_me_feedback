@@ -8,7 +8,7 @@ const Form = () => {
 	const [text, setText] = useState('')
 	const [btnDisabled, setBtnDisabled] = useState(true)
 	const [msg, setMsg] = useState('')
-	const [rating, setRating] = useState('')
+	const [rating, setRating] = useState(10)
 	const { addFeedback, edit, updateStatement } = useContext(FeedbackContext)
 
 	useEffect(() => {
@@ -19,21 +19,19 @@ const Form = () => {
 		}
 	}, [edit])
 
-	const handleTextChange = (e) => {
-		if (text === '') {
+	const handleTextChange = ({ target: { value }}) => {
+		if (value === '') {
 			setBtnDisabled(true)
 			setMsg(null)
-		} else if (text !== '' && text.trim().length <= 10) {
+		} else if (value.trim().length < 10) {
 			setBtnDisabled(true)
 			setMsg('Come on, give me more!')
-		} else if (rating === '') {
-			setBtnDisabled(true)
-			setMsg('I need a rating too')
 		} else {
 			setMsg(null)
 			setBtnDisabled(false)
 		}
-		setText(e.target.value)
+
+		setText(value)		
 	}
 
 	const handleSubmit = (e) => {
@@ -50,6 +48,8 @@ const Form = () => {
 				addFeedback(newFeedback)
 			}
 			setText('')
+			setBtnDisabled(true)
+			setRating(10)
 		}
 	}
 

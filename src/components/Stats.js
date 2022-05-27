@@ -1,8 +1,8 @@
 import React, { useContext } from "react"
-import FeedbackContext from '../components/context/FeedbackContext'
+import FeedbackContext from './context/FeedbackContext'
 
 
-const FeedbackStats = () => {
+const Stats = () => {
   const { feedback } = useContext(FeedbackContext)
   
   let avg = feedback.reduce((acc, cur) => {
@@ -19,4 +19,4 @@ const FeedbackStats = () => {
   )
 }
 
-export default FeedbackStats
+export default Stats

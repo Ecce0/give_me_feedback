@@ -1,8 +1,8 @@
 import './App.css'
 import Header from './components/Header'
 import List from './components/List'
-import FeedbackStats from './components/FeedbackStats'
-import FeedbackForm from './components/FeedbackForm'
+import Stats from './components/Stats'
+import Form from './components/Form'
 import About from './components/pages/About'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import AboutIconLink from './components/shared/AboutIconLink'
@@ -21,8 +21,8 @@ const App = () => {
 							path='/'
 							element={
 								<>
-									<FeedbackForm />
-									<FeedbackStats />
+									<Form />
+									<Stats />
 									<List />
 								</>
 							}

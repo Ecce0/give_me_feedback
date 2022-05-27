@@ -8,8 +8,8 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #bd0448;
-  color: #fa8061;
+  background-color: #006BA6;
+  color: #D81159;
   line-height: 1.6;
 }
 
@@ -33,8 +33,8 @@ header {
 }
 
 .card {
-  background-color: #fff;
-  color: #333;
+  background-color: whitesmoke;
+  color: #2E282A;
   border-radius: 15px;
   padding: 40px 50px;
   margin: 20px 0;
@@ -42,8 +42,8 @@ header {
 }
 
 .card.reverse {
-  background-color: rgba(0, 0, 0, 0.4);
-  color: #fff;
+  background-color: #006BA6;
+  color: #2E282A
 }
 
 .card h2 {
@@ -62,7 +62,8 @@ header {
 .rating li,
 .num-display {
   position: relative;
-  background: #f4f4f4;
+  color: #FFBC42;
+  background: #8F2D56;
   width: 50px;
   height: 50px;
   padding: 10px;
@@ -87,8 +88,8 @@ header {
 
 .rating li:hover,
 .num-display {
-  background: #ff6a95;
-  color: #fff;
+  background: #FFBC42;
+  color: #006BA6;
 }
 
 [type='radio'] {
@@ -103,7 +104,7 @@ header {
 .input-group {
   display: flex;
   flex-direction: row;
-  border: 1px solid #ccc;
+  border: 1px solid #2E282A;
   padding: 8px 10px;
   border-radius: 8px;
 }
@@ -119,7 +120,7 @@ input:focus {
 }
 
 .feedback-stats {
-  color: #fff;
+  color: whitesmoke;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -141,6 +142,11 @@ input:focus {
   border: none;
 }
 
+
+.text-display {
+  color: #006BA6
+}
+
 .edit {
   right: 40px;
 }
@@ -156,11 +162,11 @@ input:focus {
 }
 
 .btn-primary {
-  background-color: #202142;
+  background-color: #FAD8D6;
 }
 
 .btn-secondary {
-  background: #ff6a95;
+  background: #2E282A;
 }
 
 .btn:hover {
@@ -169,8 +175,8 @@ input:focus {
 }
 
 .btn:disabled {
-  background-color: #cccccc;
-  color: #333;
+  background-color: #FAD8D6;
+  color: #2E282A;
   cursor: auto;
 }
 
@@ -182,7 +188,7 @@ input:focus {
 .message {
   padding-top: 10px;
   text-align: center;
-  color: rebeccapurple;
+  color: #D81159;
 }
 
 /* FIX: Remove position: absolute to keep about icon at the bottom of the
@@ -200,7 +206,7 @@ input:focus {
 }
 
 .about-link a:hover {
-  color: #ff6a95;
+  color: #17BEBB;
 }
 
 .about h1 {
@@ -227,4 +233,6 @@ input:focus {
   .input-group input {
     width: 80%;
   }
+
+ 
 }

@@ -10,7 +10,7 @@ const AboutIconLink = () => {
       <Link to={{
         pathname: '/about'
       }}>
-        <FaQuestion size={30} />
+        <FaQuestion color='#FFBC42' size={30} />
       </Link>      
     </div>
   )

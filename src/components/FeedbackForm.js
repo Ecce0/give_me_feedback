@@ -56,7 +56,7 @@ const FeedbackForm = () => {
 	return (
 		<Card>
 			<form onSubmit={handleSubmit}>
-				<h2>How would you rate my feedback app?</h2>
+				<h2 style={{ color: '#3E4E50' }}>How would you rate my feedback app?</h2>
 				<Ratings select={setRating} selected={rating} />
 				<div className='input-group'>
 					<input

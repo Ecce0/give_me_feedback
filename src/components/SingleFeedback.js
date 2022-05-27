@@ -10,10 +10,10 @@ const SingleFeedback = ({ statement }) => {
 		<Card reverse={true}>
 			<div className='num-display'>{statement.rating}</div>
 			<button className='close' onClick={() => onDelete(statement.id)}>
-				<FaTimes color='orange' />
+				<FaTimes color='#D81159' size={20} />
 			</button>
 			<button onClick={() => editStatement(statement)} className="edit">
-				<FaEdit color="orange" />
+				<FaEdit color='#D81159' size={20} />
 			</button>
 			<div className='text-display'>{statement.text}</div>
 		</Card>

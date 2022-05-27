@@ -1,10 +1,11 @@
 import React from "react"
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { FaComments, FaRegComments } from 'react-icons/fa'
 
 const Head = styled.header`
- background: #f7aa97;
- color: #6b0c28
+ background: #8F2D56;
+ color: #FFBC42
 `
 
 const Header = ({ text }) => {
@@ -12,8 +13,18 @@ const Header = ({ text }) => {
   
   return (
     <Head>
-      <div className="container">
-        <h2>{text}</h2>
+      <div className="container">        
+        <h2>
+          <span>
+            <FaComments color='#fff' size={45} />
+            {' '}
+          </span>
+          {text}
+          <span>
+            {' '}
+            <FaRegComments color='#fff' size={45} />
+          </span>
+        </h2>        
       </div>
     </Head>
   )

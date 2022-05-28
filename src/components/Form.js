@@ -23,9 +23,9 @@ const Form = () => {
 		if (value === '') {
 			setBtnDisabled(true)
 			setMsg(null)
-		} else if (value.trim().length < 10) {
+		} else if (value.trim().length < 10 || rating === '') {
 			setBtnDisabled(true)
-			setMsg('Come on, give me more!')
+			setMsg('Come on, give me more! Don\'t forget to rate me')
 		} else {
 			setMsg(null)
 			setBtnDisabled(false)
